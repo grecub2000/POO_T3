@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1589716124 source:c:\users\grecu\desktop\new\poo_t3\main.cpp
+	<iostream>
+	<string>
+	<bits/stdc++.h>
+

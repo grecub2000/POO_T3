@@ -1,0 +1,29 @@
+firma& firma :: operator = (const firma& f)
+{
+    for(auto &it : plati)
+    {
+        delete it.second;
+    }
+    plati.clear();
+    for(auto &it : f.plati)
+    {
+        if(dynamic_cast<plata_card*>(it.second))
+        {
+            plati[it.first] = new plata_numerar(*(dynamic_cast<plata_numerar*>(it.second)));
+        }
+        if(dynamic_cast<plata_card*>(it.second))
+        {
+            plati[it.first] = new plata_cec(*(dynamic_cast<plata_cec*>(it.second)));
+        }
+        if(dynamic_cast<plata_card*>(it.second))
+        {
+            plati[it.first] = new plata_card(*(dynamic_cast<plata_card*>(it.second)));
+        }
+
+    }
+    this -> card = f.card;
+    this -> cec = f.cec;
+    this -> numerar = f.numerar;
+    this -> id = f.id;
+    return *this;
+}
